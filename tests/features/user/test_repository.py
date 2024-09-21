@@ -1,15 +1,11 @@
 import pytest
 from unittest.mock import MagicMock, patch
 from sqlalchemy.orm import Session
-from qna_api.domain.question import QuestionEntity
-from qna_api.domain.answer import AnswerEntity
 from qna_api.domain.user import UserEntity
 from qna_api.features.user.repository import UserRepository
 
 # Mock data
-mock_answer = AnswerEntity(id=1, content="This is an answer", question_id=1, user_id=1)
-mock_question = QuestionEntity(id=1, title="Sample Question", description="This is a sample question", user_id=1, answers=[mock_answer])
-mock_user = UserEntity(id=1, username="testuser", full_name="Test User", email="test@example.com", disabled=False, roles=["user"], questions=[mock_question], answers=[mock_answer])
+mock_user = UserEntity(id=1, username="testuser", full_name="Test User", email="test@example.com", disabled=False, roles=["user"])
 
 @pytest.fixture
 def db_session():

@@ -15,9 +15,6 @@ class UserEntity(Base):
     disabled = Column(Boolean, default=False)
     roles = Column(String)  # Roles stored as comma-separated string
 
-    questions = relationship("QuestionEntity", back_populates="user")
-    answers = relationship("AnswerEntity", back_populates="user")
-
     def get_roles(self) -> List[Role]:
         return [Role(role) for role in self.roles.split(",")]
 
