@@ -1,0 +1,15 @@
+bcrypt==4.0.1
+debugpy
+fastapi
+mediatr
+passlib 
+passlib[bcrypt]
+pydantic
+pydantic-settings
+pytest
+pytest-cov
+pytest-dotenv
+pytest-mock
+python-jose
+sqlalchemy
+uvicorn
